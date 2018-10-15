@@ -29,6 +29,7 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Thumbnail</th>
                 <th>View</th>
                 <th>Delete</th>
             </tr>
@@ -37,6 +38,9 @@
             <tr th:each="image:${list}">
                 <td th:text="${image.id}"></td>
                 <td th:text="${image.name}"></td>
+                <td>
+                <img id="myimage" width="50" height="50" src="http://localhost:8081/showImage?id=7" th:src="'showImage?id=' + ${image.id}"/>
+                </td>
                 <td><a th:href="'showImage?id=' + ${image.id}">查看</a></td>
                 <td><a th:href="'delete?id=' + ${image.id}">删除</a></td>
             </tr>
